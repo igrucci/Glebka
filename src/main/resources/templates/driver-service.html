@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+
+</head>
+<body>
+<h1>Driver Service</h1>
+
+<form action="/service/process" method="post">
+  <label for="name">Name:</label>
+  <input type="text" id="name" name="name" required>
+<br>
+    <input type="checkbox" id="inflateTires" name="serviceName" value="Inflate Tires"> Inflate Tires<br>
+    <input type="checkbox" id="refuelCar" name="serviceName" value="Refuel Car"> Refuel Car<br>
+    <input type="checkbox" id="buyCarProducts" name="serviceName" value="Buy Car Products"> Buy Car Products<br>
+    <input type="submit" value="Submit">
+
+  <div>
+    <label for="feedback">Оставить отзыв:</label>
+    <textarea id="feedback" name="feedback" rows="4"></textarea>
+  </div>
+
+  <button type="submit">Submit</button>
+</form>
+
+<h2>Последние отзывы:</h2>
+<textarea th:text="${latestFeedbacks}" readonly></textarea>
+</body>
+</html>
