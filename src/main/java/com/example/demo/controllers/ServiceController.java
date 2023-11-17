@@ -26,19 +26,7 @@ public class ServiceController {
         this.orderService = orderService;
     }
 
-    @GetMapping("/")
-    public String showHomePage() {
-        return "index";
-    }
-
     private Queue<String> feedbackQueue = new LinkedList<>();
-    @GetMapping("/driver")
-    public String showDriverServicesPage(Model model) {
-        model.addAttribute("bodywork", false);
-        model.addAttribute("order", new Order());
-        model.addAttribute("latestFeedbacks", getLatestFeedbacks());
-        return "driver-service";
-    }
 
     private String getLatestFeedbacks() {
         StringBuilder feedbacks = new StringBuilder();
@@ -48,9 +36,27 @@ public class ServiceController {
         return feedbacks.toString();
     }
 
+    @GetMapping("/")
+    public String showHomePage() {
+
+        return "index";
+    }
+
+
+    @GetMapping("/driver")
+    public String showDriverServicesPage(Model model) {
+        model.addAttribute("bodywork", false);
+        model.addAttribute("order", new Order());
+        model.addAttribute("latestFeedbacks", getLatestFeedbacks());
+        return "driver-service";
+    }
+
+
+
     @GetMapping("/pedestrian")
     public String showPedestrianServicesPage(Model model) {
         model.addAttribute("order", new Order());
+        model.addAttribute("latestFeedbacks", getLatestFeedbacks());
         return "pedestrian-service";
     }
 

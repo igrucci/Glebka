@@ -2,45 +2,7 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      background-color: mediumseagreen;
-      color: #333;
-      margin: 0;
-      padding: 0;
-    }
 
-    h1 {
-      color: #0066cc;
-    }
-
-    h2 {
-      color: #009900;
-    }
-
-    .container {
-      max-width: 600px;
-      margin: 0 auto;
-      padding: 20px;
-      background-color: #fff;
-      border-radius: 10px;
-      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    }
-
-    .user-info, .order-info {
-      margin-bottom: 15px;
-    }
-
-    strong {
-      font-weight: bold;
-    }
-
-    span {
-      font-weight: bold;
-      color: #009900;
-    }
-  </style>
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -56,7 +18,8 @@
 <h2>Order Information:</h2>
 <p><strong>Service Name:</strong> <span th:text="${order.serviceName}"></span></p>
 
-
+<br>
+<a href="/">Back to home</a>
 
 </body>
 </html>
